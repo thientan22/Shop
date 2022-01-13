@@ -1,0 +1,4 @@
+function deletehanghoa()
+{
+    alert (mshh);
+}

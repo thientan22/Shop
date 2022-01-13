@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./User/assets/style/login.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="main" class="box main" style="background-image: url(./assets/img/login_img.png);">
+            <div class="login box" >
+                <div class="login_inp box">
+                    <div class="inp_user"></div>
+                    <form class="box form">
+                        <div class="user" style="background-image: url(./assets/img/user.png);"></div>
+                        <h5>WELCOME</h5>
+                        <input type="text" class="input" id="email" placeholder="Email / Tài khoản">
+                        <input type="password" class="input" id="password" placeholder="Mật khẩu">
+                        <div id="submit" class="sub">Đăng nhập</div>
+                    </form>
+                    <div id="result" class="box"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        $('#submit').on('click',
+        function()
+        {
+            var user = $('#email').val();
+            var pass = $('#password').val();
+            $.post
+            (
+                "./assets/php/login.php",
+                {user: user, pass: pass},
+                function(data)
+                {
+                    if(data == 1)
+                    {
+                        window.location.href = "./index.php?mskh=" + $('#email').val();
+                    }
+                    else
+                    {
+                        $('#result').html(data);
+                        document.getElementById('result').style.display = "flex";
+                        setTimeout
+                        (
+                            function()
+                            {
+                                document.getElementById('result').style.display = "none";
+                            },
+                            1500
+                        )
+                    }
+                }
+            )
+        })
+    </script>
+</html>

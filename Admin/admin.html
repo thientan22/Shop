@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin</title>
+        <meta charset="utf-8">
+        <!-- ajax -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- font awaresome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <!-- style -->
+        <link rel="stylesheet" href="./assets/style/admin.css">
+        <!-- font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="main">
+            <!-- background -->
+            <div class="main-background" style="background-image: url(https://wallpapershome.com/images/pages/pic_h/23780.jpg);"></div>
+            <!-- header -->
+            <div class="header box pad row">
+                <h1>Administrator</h1>
+                <div class="search box">
+                    <input type="text" name="" id="">
+                    <i class="fas fa-search"></i>
+                    <i id="sunlight" class="far fa-sun"></i>
+                </div>
+            </div>
+            <div class="container">
+                <div class="info-data pad col row box">
+                    <div class="info-data_items box">
+                        <h1 class="countallproduct">1240</h1>
+                        <div class="items_name">Tổng sản phẩm</div>
+                    </div>
+                    <div class="info-data_items box">
+                        <h1 class="countallfinish">820</h1>
+                        <div class="items_name">Đã bán</div>
+                    </div>
+                    <div class="info-data_items box">
+                        <h1 class="countallrunning">57</h1>
+                        <div class="items_name">Đơn hàng chờ xét duyệt</div>
+                    </div>
+                    <div class="info-data_items box">
+                        <h1 class="countalltrans">186</h1>
+                        <div class="items_name">Đơn dang vận chuyển</div>
+                    </div>
+                </div>
+                <div class="input-info pad col row box">
+                    <ul class="list-funtion box">
+                       <h3>Chức năng</h3>
+                        <h5>Thêm</h5>
+                        <li onclick="showdiv(this, 'sectors')" class="active"><a>Thêm loại hàng</a></li>
+                        <li onclick="showdiv(this, 'product')"><a>Thêm hàng hoá</a></li>
+                        <li onclick="showdiv(this, 'staff')">Thêm Nhân viên</li>
+                        <li onclick="showdiv(this, 'client')">Thêm khách hàng</li>
+                        <h5>Cập nhật</h5>
+                        <li onclick="showdiv(this, 'delete')">Xoá hàng hoá</li>
+                        <li onclick="showdiv(this, 'duyetdonhang')">Duyệt đơn hàng</li>
+                        <li onclick="showdiv(this, 'duyetdonhangdaxacnhan')">Đơn hàng đã xác nhận</li>
+                        <h5>Liệt kê</h5>
+                        <li onclick="showdiv(this, 'allproduct')">Tất cả sản phẩm</li>
+                    </ul>
+                    <div class="box-run">
+                        <form id="sectors" class="sectors input-info_add pad row col box" method="POST">
+                            <div class="add_items box">
+                                <h5>Mã loại hàng</h5>
+                                <input type="text" id="sectorsmaloaihang">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Tên loại hàng</h5>
+                                <input type="text" id="sectorstenloaihang">
+                            </div>
+                            <div class="submit_items box">
+                                <div id="sectorssubmit" class="submit">Thêm</div>
+                            </div>
+                        </form>
+                        <form id="product" class="input-info_add pad row col box" action="">
+                            <div class="add_items box">
+                                <h5>Mã loại hàng hoá</h5>
+                                <input type="text" id="productmaloaihanghoa">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Mã số hàng hoá</h5>
+                                <input type="text" id="productmasohanghoa">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Tên hàng hoá</h5>
+                                <input type="text" id="producttenhanghoa">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Mô tả hàng hoá</h5>
+                                <input type="text" id="productmotahanghoa">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Giá hàng hoá</h5>
+                                <input type="text" id="productgiahanghoa">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Mã hình hàng hoá</h5>
+                                <input type="text" id="productmahinhhanghoa">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Hình đại diện hàng hoá</h5>
+                                <input type="text" id="productprofilehinhhanghoa">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Hình hàng hoá 1</h5>
+                                <input type="text" id="producthinhhanghoa1">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Hình hàng hoá 2</h5>
+                                <input type="text" id="producthinhhanghoa2">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Hình hàng hoá 3</h5>
+                                <input type="text" id="producthinhhanghoa3">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Hình hàng hoá 4</h5>
+                                <input type="text" id="producthinhhanghoa4">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Số lượng hàng hoá</h5>
+                                <input type="text" id="productsoluonghanghoa">
+                            </div>
+                            <div class="submit_items box">
+                                <div id="productsubmit" class="submit">Thêm</div>
+                            </div>
+                        </form>
+                        <form id="staff" class="input-info_add pad row col box" action="">
+                            <div class="add_items box">
+                                <h5>Mã số nhân viên</h5>
+                                <input type="text" id="staffmsnv">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Họ tên nhân viên</h5>
+                                <input type="text" id="stafften">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Chức vụ</h5>
+                                <input type="text" id="staffchucvu">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Địa chỉ</h5>
+                                <input type="text" id="staffdiachi">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Số điện thoại</h5>
+                                <input type="text" id="staffsdt">
+                            </div>
+                            <div class="submit_items box">
+                                <div id="staffsubmit" class="submit">Thêm</div>
+                            </div>
+                        </form>
+                        <form id="client" class="input-info_add pad row col box" action="">
+                            <div class="add_items box">
+                                <h5>Mã số khách hàng</h5>
+                                <input type="text" id="clientmskh">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Họ tên khách hàng</h5>
+                                <input type="text" id="clientten">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Mật khẩu khách hàng</h5>
+                                <input type="text" id="clientpass">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Tên công ty khách hàng</h5>
+                                <input type="text" id="clientcty">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Số điện thoại</h5>
+                                <input type="text" id="clientsdt">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Số fax</h5>
+                                <input type="text" id="clientfax">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Mã địa chỉ</h5>
+                                <input type="text" id="clientmalocation">
+                            </div>
+                            <div class="add_items box">
+                                <h5>Địa chỉ</h5>
+                                <input type="text" id="clientlocation">
+                            </div>
+                            <div class="submit_items box">
+                                <div id="clientsubmit" class="submit">Thêm</div>
+                            </div>
+                        </form>
+                        <form id="delete" class="input-info_add pad row col box" action="">
+                            <div class="add_items box">
+                                <h5>Mã số hàng hoá</h5>
+                                <input type="text" id="deletehanghoa">
+                            </div>
+                            <div class="submit_items box">
+                                <div id="deletesubmit" class="submit">Tìm</div>
+                            </div>
+                            <div id="resultfind" class="box pad col">Sản phẩm cần xoá</div>
+                        </form>
+                        <form id="duyetdonhang" class="input-info_add pad row col box" action="">
+                            <div id="resultduyetdonhang"></div>
+                        </form>
+                        <form id="duyetdonhangdaxacnhan" class="input-info_add pad row col box" action="">
+                            <div id="resultduyetdonhangdaxacnhan"></div>
+                        </form>
+                        <form id="allproduct" class="input-info_add pad row col box">
+                            <div id="resultallproduct" class="box">
+                                <div class="picturehh">hinh</div>
+                                <div class="maloaihang">Mã:</div>
+                                <div class="maloaihang">ML:</div>
+                                <div class="tenhh">Tên: </div>
+                                <div class="giahh">Giá</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+            </div>
+            <div id="result">
+            </div>
+        </div>
+        <script>
+            $.post
+            (
+                "./assets/php/admin.php",
+                {func: 11},
+                function(data)
+                {
+                    $('#resultallproduct').html(data);
+                }
+            )
+            function xacnhangiaohang(cus)
+            {
+                $.post
+                (
+                    "./assets/php/admin.php",
+                    {masodon: cus, func: 10},
+                    function(data)
+                    {
+                        $('#resultduyetdonhang').html(data);
+                        loadxnhandon();
+                        trans();
+                        finish();
+                    }
+                )
+            }
+            function loadxnhandon()
+            {
+                $.post
+                (
+                    "./assets/php/admin.php",
+                    {func: "9"},
+                    function(data)
+                    {
+                        $('#resultduyetdonhangdaxacnhan').html(data);
+                    }
+                )
+            }
+            function xacnhandon(cus)
+            {
+                $.post
+                (
+                    "./assets/php/admin.php",
+                    {masodon: cus, func: 8},
+                    function(data)
+                    {
+                        $('#resultduyetdonhang').html(data);
+                        loadxnhandon();
+                        running();
+                        trans();
+                    }
+                )
+            }
+            var temps = document.querySelectorAll('.list-funtion li');
+            // hideform
+            function hide()
+            {
+                document.getElementById('sectors').style.display = "none";
+                document.getElementById('product').style.display = "none";
+                document.getElementById('staff').style.display = "none";
+                document.getElementById('client').style.display = "none";
+                document.getElementById('delete').style.display = "none";
+                document.getElementById('duyetdonhang').style.display = "none";
+                document.getElementById('duyetdonhangdaxacnhan').style.display = "none";
+                document.getElementById('allproduct').style.display = "none";
+            }
+            // hideactive
+            function remove_class()
+            {
+                for(var i = 0; i < temps.length; i ++)
+                {
+                    temps[i].classList.remove("active");
+                }
+            }
+            // showactiveonclick
+            function showdiv(myobj, get_id)
+            {
+                hide();
+                document.getElementById(get_id).style.display = "flex";
+                remove_class();
+                myobj.classList.add("active");
+            }
+            var sunlight = 1;
+            $('#sunlight').on('click',
+            function()
+            {
+                var rootstyle = document.documentElement.style;
+                if(sunlight == 1)
+                {
+                    rootstyle.setProperty("--text-color", "rgba(255, 255, 255, 1)");
+                    rootstyle.setProperty("--background-items-color", "rgba(0, 0, 0, 0.35)");
+                    rootstyle.setProperty("--white-color", "rgba(0, 0, 0, 0.15)");
+                    rootstyle.setProperty("--background-color", "rgba(0, 0, 0, 0.35)");
+                    rootstyle.setProperty("--black-color", "rgba(255, 255, 255, 0.35)");
+                    sunlight = 2;
+                }
+                else
+                {
+                    rootstyle.setProperty("--text-color", "rgba(0, 0, 0, 1)");
+                    rootstyle.setProperty("--background-items-color", "rgba(255, 255, 255, 0.45)");
+                    rootstyle.setProperty("--white-color", "rgba(255, 255, 255, 0.35)");
+                    rootstyle.setProperty("--background-color", "rgba(255, 255, 255, 0.35)");
+                    rootstyle.setProperty("--black-color", "rgba(0, 0, 0, 0.15);");
+                    sunlight = 1;
+                }
+            })
+
+            </script>
+        <!-- ajax -->
+        <script>
+            running();
+            trans();
+            finish();
+            $.post
+            (
+                "./assets/php/admin.php",
+                {func: 12},
+                function(data)
+                {
+                    $('.countallproduct').html(data);
+                }
+            )
+            function finish()
+            {
+                $.post
+                (
+                    "./assets/php/admin.php",
+                    {func: 13},
+                    function(data)
+                    {
+                        $('.countallfinish').html(data);
+                    }
+                )
+            }
+            function running()
+            {
+                $.post
+                (
+                    "./assets/php/admin.php",
+                    {func: 14},
+                    function(data)
+                    {
+                        $('.countallrunning').html(data);
+                    }
+                )
+            }
+            function trans()
+            {
+                $.post
+                (
+                    "./assets/php/admin.php",
+                    {func: 15},
+                    function(data)
+                    {
+                        $('.countalltrans').html(data);
+                    }
+                )
+            }
+            $.post
+            (
+                "./assets/php/admin.php",
+                {func: "7"},
+                function(data)
+                {
+                    $('#resultduyetdonhang').html(data);
+                }
+            )
+            $.post
+            (
+                "./assets/php/admin.php",
+                {func: "9"},
+                function(data)
+                {
+                    $('#resultduyetdonhangdaxacnhan').html(data);
+                }
+            )
+            function acceptdelete()
+            {
+                var valuedelete = $('#resultfindsuccess').val();
+                $.post
+                (
+                    "./assets/php/admin.php",
+                    {valuedelete: valuedelete, func: "6"},
+                    function(data)
+                    {
+                        $('#resultfind').html(data);
+                    }
+                )
+            }
+
+            $('#deletesubmit').on('click',
+            function()
+            {
+                var mshh = $('#deletehanghoa').val();
+                $.post
+                (
+                "./assets/php/admin.php",
+                {mshh: mshh, func: "5"},
+                function(data)
+                {
+                    $('#resultfind').html(data);
+                }
+                )
+            })
+            // add data client
+            $('#clientsubmit').on('click',
+            function()
+            {
+                var mskh = $('#clientmskh').val();
+                var ten = $('#clientten').val();
+                var pass = $('#clientpass').val();
+                var cty = $('#clientcty').val();
+                var sdt = $('#clientsdt').val();
+                var fax = $('#clientfax').val();
+                var malocation = $('#clientmalocation').val();
+                var location = $('#clientlocation').val();
+                $.post
+                (
+                    "./assets/php/admin.php",
+                    {mskh: mskh, ten: ten, pass: pass, cty: cty, sdt: sdt, fax: fax, malocation: malocation, location: location, func: "4"},
+                    function(data)
+                    {
+                        $('#result').html(data);
+                    }
+                )
+                noti();
+            })
+            // add data staff
+            $('#staffsubmit').on('click',
+            function()
+            {
+                var msnv = $('#staffmsnv').val();
+                var ten = $('#stafften').val();
+                var chucvu = $('#staffchucvu').val();
+                var diachi = $('#staffdiachi').val();
+                var sdt = $('#staffsdt').val();
+                $.post
+                (
+                    "./assets/php/admin.php",
+                    {msnv: msnv, ten: ten, chucvu: chucvu, diachi: diachi, sdt: sdt, func: "3"},
+                    function(data)
+                    {
+                        $('#result').html(data);
+                    }
+                )
+                noti();
+            })
+        
+            // adddatasectors
+            $('#sectorssubmit').on('click',
+            function()
+            {
+                var maloaihang = $('#sectorsmaloaihang').val();
+                var tenloaihang = $('#sectorstenloaihang').val();
+                $.post
+                (
+                    "./assets/php/admin.php",
+                    {maloaihang: maloaihang, tenloaihang: tenloaihang, func: "1"},
+                    function(data)
+                    {
+                        $("#result").html(data);
+                    }
+                )
+                noti();
+            })
+
+            // adddataproduct
+            $('#productsubmit').on('click', 
+            function()
+            {
+                var maloaihang = $('#productmaloaihanghoa').val();
+                var masohanghoa = $('#productmasohanghoa').val();
+                var tenhanghoa = $('#producttenhanghoa').val();
+                var motahanghoa = $('#productmotahanghoa').val();
+                var giahanghoa = $('#productgiahanghoa').val();
+                var mahinhhanghoa = $('#productmahinhhanghoa').val();
+                var hinhdaidien = $('#productprofilehinhhanghoa').val();
+                var hinhhanghoa1 = $('#producthinhhanghoa1').val();
+                var hinhhanghoa2 = $('#producthinhhanghoa2').val();
+                var hinhhanghoa3 = $('#producthinhhanghoa3').val();
+                var hinhhanghoa4 = $('#producthinhhanghoa4').val();
+                var soluonghanghoa = $('#productsoluonghanghoa').val();
+                $.post
+                (
+                    "assets/php/admin.php",
+                    {maloaihang: maloaihang, masohanghoa: masohanghoa, tenhanghoa: tenhanghoa, motahanghoa: motahanghoa, giahanghoa: giahanghoa, mahinhhanghoa: mahinhhanghoa, hinhdaidien: hinhdaidien, hinhhanghoa1: hinhhanghoa1, hinhhanghoa2: hinhhanghoa2, hinhhanghoa3: hinhhanghoa3, hinhhanghoa4: hinhhanghoa4, soluonghanghoa: soluonghanghoa, func: "2"},
+                    function(data)
+                    {
+                        $("#result").html(data);
+                    }
+                )
+                noti();
+            })
+            function noti()
+            {
+                document.getElementById('result').style.display = "flex";
+                setTimeout
+                (
+                    function()
+                    {
+                        document.getElementById('result').style.display = "none";
+                    },
+                    1500
+                )
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,364 @@
+:root
+{
+    --background-color : rgba(255, 255, 255, 0.35);
+    --background-items-color: rgba(255, 255, 255, 0.45);
+    --black-color: rgba(0, 0, 0, 0.15);
+    --white-color: rgba(255, 255, 255, 0.35);
+    --text-color: rgba(0, 0, 0, 1);
+    --hover-color: rgba(255, 100, 60, 1);
+}
+html
+{
+    box-sizing: border-box;
+    font-size: 62.5%;
+	scroll-behavior: smooth;
+    background-color: var(--background-color);
+}
+#main
+{
+    position: relative;
+    font-size: 1.4rem;
+}
+*
+{
+    padding: 0;
+    margin: 0;
+    font-family: 'Lexend', sans-serif;
+    color: var(--text-color);
+}
+.box
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+.pad.row
+{
+    padding: 0px 46px;
+}
+.pad.col
+{
+    padding: 48px 0px;
+}
+.pad.col.row
+{
+    padding: 48px 48px;
+}
+.header
+{
+    justify-content: space-between;
+    padding-top: 16px !important;
+}
+.main-background
+{
+    position: absolute;
+    left: 0;right: 0;bottom: 0;top: 0;
+    z-index: -1;
+    filter: blur(120px);
+    opacity: 40%;
+}
+.search
+{
+    background-color: var(--background-items-color);
+    justify-content: center;
+    align-items: center;
+    border-radius: 48px;
+}
+.search input
+{
+    background: none;
+    outline: none;
+    padding: 4px 12px;
+    border: none;   
+}
+.search i
+{
+    padding: 0px 12px;
+}
+.info-data
+{
+    justify-content: space-between;
+    align-items: center;
+}
+.info-data_items
+{
+    background-color: var(--background-items-color);
+    padding: 28px 40px;
+    border-radius: 6px;
+}
+.info-data_items div,
+.info-data_items h1
+{
+    width: 100%;
+    padding: 12px 0px;
+    text-align: center;
+}
+.list-funtion
+{
+    width: 254px;
+    background-color: var(--background-items-color);
+    list-style: none;
+    border-radius: 4px 0px 0px 0px;
+}
+.list-funtion h3
+{
+    width: 100%;
+    padding: 16px 12px;
+    border-radius: 4px;
+}
+.list-funtion h5
+{
+    width: 100%;
+    padding: 12px 0px;
+    margin-left: 48px;
+    color: red  ;
+}
+.list-funtion li a
+{
+    text-decoration: none;
+}
+.list-funtion li:hover a
+{
+    color: var(--hover-color);
+}
+li.active
+{
+    background-color: var(--background-items-color);
+    border-radius: 48px;
+}
+.list-funtion li
+{
+    height: 48px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0px 12px;
+    margin:12px 0px;
+    margin-left: 56px;
+    cursor: pointer;
+}
+.list-funtion li:hover
+{
+    color: var(--hover-color);
+}
+.add_items
+{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+}
+.add_items input
+{
+    width: 512px;
+    background-color: var(--background-items-color);
+    border: none;
+    padding: 12px 12px;
+    border-radius: 48px;
+    outline: none;
+}
+.add_items h5
+{
+    padding: 0px 12px;
+    width: 140px;
+}
+.submit_items
+{
+    width: 100%;
+    justify-content: center;
+    padding-top: 24px;
+}
+.submit_items .submit
+{
+    margin-left: 614px;
+    background-color: var(--hover-color);
+    border-radius: 48px;
+    padding: 12px 24px;
+    border: none;
+    color: white;
+}
+.input-info_add
+{
+    display: none;
+    align-content: center;
+    animation: showin linear 0.15s forwards;
+}
+.box-run
+{
+    flex: 1;
+    height: 936px;
+    background-color: var(--background-items-color);
+    border-left: 2px solid var(--white-color)
+}
+#sectors
+{
+    display: flex;
+}
+.notificaton
+{
+    
+}
+#result
+{
+    display: none;
+    position: fixed;
+    top: 0;bottom: 0;left: 0;right: 0;
+    background-color: var(--background-items-color);
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+#resultfind
+{
+    width: 100%;
+    margin-top: 48px;
+    border-radius: 4px;
+    justify-content: center;
+    background-color: var(--background-items-color);
+}
+.delpicture
+{
+    width: 120px;
+    height: 120px;
+    background-size: contain;
+    margin: 0px 12px;
+}
+#resultfind h5
+{
+    width: 100%;
+    text-align: center;
+    padding: 48px 12px;
+}
+#acceptdelete
+{
+    background-color: var(--hover-color);
+    padding: 12px 24px;
+    color: white;
+    border-radius: 48px;
+    border: none;
+}
+.iditems
+{
+    width: 100%;
+    background-color: var(--background-items-color);
+    justify-content: center;
+    border-radius: 4px;
+}
+.sodondathang
+{
+    width: 100%;
+    background-color: var(--background-items-color);
+    padding: 12px 12px;
+    border-radius: 4px;
+    justify-content: space-between;
+}
+.tenkhachhang
+{
+    margin-top: 16px;
+    width: 100%;
+    padding-left: 32px;
+    color: red;
+}
+.danhsachhanghoa
+{
+    width: 90%;
+    background-color: var(--background-items-color);
+    justify-content: space-between;
+    padding: 16px 8px;
+    margin: 12px 0px;
+    border-radius: 8px;
+}
+.tenhanghoa
+{
+    width: 100%;
+}
+.giahanghoa
+{
+    width: 100%;
+}
+.trangthaidathang
+{
+    width: 100%;
+    justify-content: right;
+    padding: 12px 8px;
+}
+.space
+{
+    width: 100%;
+    height: 48px;
+}
+.tenhhad
+{
+    flex: 1;
+}
+.soluongad
+{
+    flex: 0.25;
+}
+.giad
+{
+    flex: 0.25;
+}
+#resultduyetdonhang
+{
+    height: 842px;
+    width: 100%;
+    overflow: auto;
+}
+.xacnhandon
+{
+    color: var(--hover-color);
+    cursor: pointer;
+}
+#resultduyetdonhangdaxacnhan
+{
+    overflow: auto;
+    height: 832px;
+}
+::-webkit-scrollbar
+{
+    width: 1px;
+}
+@keyframes showin
+{
+    from
+    {
+        transform: translateY(120px);
+        opacity: 0%;
+    }
+    to
+    {
+        transform: translateY(0px);
+        opacity: 100%;
+    }
+}
+#resultallproduct
+{
+    width: 100%;
+}
+.picturehh
+{
+    width: 48px;
+    height: 48px;
+    background-size: 100%;
+    border-radius: 100%;
+    margin-right: 12px;
+}
+.tenhh
+{
+    flex: 1;
+    overflow: auto;
+}
+.maloaihang
+{
+    width: 120px;
+}
+.giahh
+{
+    width: 120px;
+}
+.itemsallp
+{
+    width: 100%;
+    align-items: center;
+    margin-bottom: 12px;
+}
